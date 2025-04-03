@@ -23,8 +23,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+          set -e  # Stop on error
+          pip install --upgrade pip setuptools wheel
+          pip cache purge
+          pip install --no-cache-dir -r requirements.txt
 
       - name: Run Tests
         run: |
