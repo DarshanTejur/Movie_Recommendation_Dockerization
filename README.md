@@ -1,86 +1,104 @@
-# Movie-Recommender-System
-A Web Base user-item Movie Recommendation Engine using Collaborative Filtering By matrix factorizations algorithm and
-The recommendation based on the underlying idea that is if two persons both liked certian common movies,then the movies that one person has liked that the other person has not yet watched can be recommended to him.   
-### Screenshot
+# 🎬 Movie Recommendation System
 
-###### Home page
-![home](https://user-images.githubusercontent.com/20842692/45380125-941d7500-b61f-11e8-852d-c09e9586b35b.png)
+## 📖 Overview  
+  This is a **DevOps-integrated Django-based Movie Recommendation System**. The project is containerized using Docker and features a GitHub Actions workflow for continuous integration and automated testing.
 
-###### Recommendation page
-![recom](https://user-images.githubusercontent.com/20842692/45380167-b57e6100-b61f-11e8-8ec0-e07c26daa4a3.jpg)
+## ✨ Features  
+   **Django Backend**: A functional recommendation system built with Django.
+   **CI/CD**: Automated testing pipeline powered by GitHub Actions.
+   **Dockerized**: Complete containerization for easy setup and portability.
 
-###### Rating page
-![rate](https://user-images.githubusercontent.com/20842692/45380186-be6f3280-b61f-11e8-8ad6-8b967d1cba1a.png)
+## 🛠️ Technologies  
+  ### Backend  
+  - Django (Python)  
+  - Pandas, NumPy, SciPy  
+  - REST API  
 
-### Technologies Used
+  ### DevOps  
+  - Docker  
+  - GitHub Actions (CI/CD)
 
-#### Web Technologies
-Html , Css , JavaScript , Bootstrap , Django
-
-#### Machine Learning Library In Python3
-Numpy , Pandas , Scipy
-
-#### Database
-SQLite
-
-##### Requirements
-```
-python 3.6
-
-pip3
-
-virtualenv
-```
-##### Setup to run
-
-Extract zip file in your computer
-
-Open terminal/cmd promt
-
-Goto that Path
-
-Example
+## 📁 Folder Structure  
 
 ```
-cd ~/Destop/Movie-Recommender-System
-```
-Create a new virtual environment on that directory
-
-```
-virtualenv .
-```
-
-Activate Your Virtual Environment
-
-for Linux
-```
-source bin/activate
-```
-for Windows
-```
-cd Scripts
-then
-activate
-```
-To install Dependencies
-
-```
-pip install -r requirements.txt
+Movie_Recommendation_Dockerization/
+├── src/                    # Django project and app code
+├── requirements.txt        # Python dependencies
+├── Dockerfile              # Docker image instructions
+├── .github/workflows/
+│   └── cicd.yml            # CI/CD pipeline file
 ```
 
-### Creating Local Server
+## 🚀 Step-by-Step Setup Instructions  
+   You don’t need to manually configure internals — just follow the steps:
 
-Goto src directory, example
+### 1. Clone the Repo  
+    ```
+    git clone https://github.com/DarshanTejur/Movie_Recommendation_Dockerization.git  
+    cd Movie_Recommendation_Dockerization  
+    ```
 
+### 2. Prerequisites  
+  Ensure you have:
+    - Docker
+    - Git
+    
+### 3. Build and Run the Docker Container  
+    ```
+    docker build -t movie-recommendation .  
+    docker run -p 8000:8000 movie-recommendation  
+    ```
+  Open in browser: [http://localhost:8000](http://localhost:8000)
+
+### 4. View Running Containers  
+    ```
+    docker ps  
+    ```
+
+  To stop and remove:
+    
+        docker stop <container_id>  
+        docker rm <container_id>  
+
+## 🔁 CI/CD Pipeline (GitHub Actions)  
+  This project uses a GitHub Actions workflow that runs on every push or pull request to the `main` branch. It includes:
+
+  - Checking out the code  
+  - Setting up Python 3.8  
+  - Installing dependencies  
+  - Running Django tests  
+
+### CICD File Location:  
+`.github/workflows/cicd.yml`
+
+## 🧪 How I Set This Up (Step-by-Step Guide)
+
+### Docker Setup  
+- Wrote a `Dockerfile` to create an isolated image of the Django project.  
+- Exposed port 8000 and used `python src/manage.py runserver` to launch the app inside the container.
+
+### GitHub Actions - CI/CD Workflow  
+  Steps I followed:
 ```
-cd ../Movie-Recommender-System/src
+mkdir -p .github/workflows  
+touch .github/workflows/cicd.yml  
 ```
-To run
+
+  Defined actions:
+    - Install Python 3.8  
+    - Install dependencies  
+    - Run tests automatically on push/pull request  
+
+  Git operations:
 ```
-python manage.py runserver
+git add .  
+git commit -m "Add CI/CD pipeline using GitHub Actions"  
+git push origin main  
 ```
-Now open your browser and go to this address
-```
-http://127.0.0.1:8000
-```
-Thank you for visiting my repository.
+
+### Checked GitHub Actions  
+  1. Go to your GitHub repo  
+  2. Click on the **Actions** tab  
+  3. You’ll see the workflow automatically running!
+
+Let me know if you'd like badges (e.g., build passing), screenshots, or contributor credits added!
